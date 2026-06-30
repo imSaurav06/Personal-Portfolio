@@ -5,7 +5,7 @@ export const certificationsData: Certification[] = [
     id: 'internshala-webdev',
     title: 'Web Development Certification Training',
     issuer: 'Internshala Trainings',
-    credentialLink: '#',
+    credentialLink: 'https://drive.google.com/file/d/1HNuEI9Juw6E7SR-HA3IqizEhPI2Daq5m/view?usp=sharing',
     details: 'Completed comprehensive full-stack training covering HTML, CSS, Bootstrap, DBMS, PHP, and JavaScript with React. Scored 98% in final examinations and recognized as a Top Performer.',
     iconName: 'Award'
   },
@@ -13,7 +13,7 @@ export const certificationsData: Certification[] = [
     id: 'cisco-python',
     title: 'Python Essentials 1 & 2',
     issuer: 'Cisco Networking Academy',
-    credentialLink: '#',
+    credentialLink: 'https://drive.google.com/file/d/1XI4pxO3JmgJpDGC5YvzNkufQAFUswc-G/view',
     details: 'Covers Python fundamentals, object-oriented programming (OOPs), packages, custom modules, data handling, and scientific mathematical modelling.',
     iconName: 'Award'
   },
@@ -21,7 +21,7 @@ export const certificationsData: Certification[] = [
     id: 'nptel-cloud',
     title: 'Cloud Computing Certification',
     issuer: 'NPTEL (IIT Roorkee)',
-    credentialLink: '#',
+    credentialLink: 'https://drive.google.com/file/d/1qOR0As_wsaZLbCUqPIWzcQItd6QYIaay/view',
     details: 'Rigorous course covering distributed systems, virtualization, cloud architectures, and cloud networking under IIT Roorkee guidance.',
     iconName: 'Award'
   },
@@ -37,7 +37,7 @@ export const certificationsData: Certification[] = [
     id: 'dste-bihar',
     title: 'ML & IoT Foundations',
     issuer: 'DSTE Bihar',
-    credentialLink: '#',
+    credentialLink: 'https://drive.google.com/file/d/1RKtsnBpNw_4KgUozLA_gIFwOHB1ekl1V/view',
     details: 'Foundational training in Data Science, Machine Learning, and Internet of Things deployment frameworks.',
     iconName: 'Award'
   }
