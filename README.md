@@ -77,12 +77,7 @@ To run the portfolio website locally, follow these steps:
    npm install
    ```
 
-2. **Configure Contact Form (Optional)**:
-   Create a `.env` file in the root directory to link your EmailJS credentials:
-   ```env
-   VITE_EMAILJS_SERVICE_ID=your_service_id
-   VITE_EMAILJS_TEMPLATE_ID=your_template_id
-   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+
    ```
    *If keys are omitted, the contact form automatically executes a simulation mode to preview the loading spinners and success banners.*
 
