@@ -14,7 +14,7 @@ This project is built using a modern React tech stack incorporating TypeScript, 
 - **Routing**: React Router DOM (Single Page App routing, dedicated details paths)
 - **Forms**: React Hook Form (Validation, state controls)
 - **Contact Handling**: EmailJS (SMTP email forwarding with loading/success banner feedback)
-- **Icons**: Lucide React 
+- **Icons**: Lucide React
 
 ---
 
