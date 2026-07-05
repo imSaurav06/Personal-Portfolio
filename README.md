@@ -106,7 +106,7 @@ To run the portfolio website locally, follow these steps:
 4. Deploy!
 
 ### Option 2: GitHub Pages
-1. Install the GitHub Pages deploy utility:
+1. Install the GitHub Pages deploy utility :
    ```bash
    npm install -D gh-pages
    ```
