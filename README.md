@@ -74,7 +74,7 @@ To run the portfolio website locally, follow these steps:
 1. **Install Node.js & Package Dependencies**:
    Ensure you have Node.js installed on your machine. Install project libraries by running:
    ```bash
-   npm install
+   npm install 
    ```
 
 
