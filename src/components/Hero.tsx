@@ -119,8 +119,8 @@ export const Hero: React.FC = () => {
             </button>
             
             <a
-              href="/Saurav_Kumar_Resume_l (1).pdf"
-              download="Saurav_Kumar_Resume_l (1).pdf"
+              href="/Saurav_Kumar_Resume__ (R).pdf"
+              download="Saurav_Kumar_Resume__ (R).pdf"
               className="w-full sm:w-auto px-8 py-4 rounded-xl font-sans font-bold text-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-blue-500/15 text-slate-700 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-500/30 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
             >
               Download CV
