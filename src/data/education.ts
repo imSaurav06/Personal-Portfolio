@@ -3,16 +3,16 @@ import { Education } from '../types';
 export const educationData: Education[] = [
   {
     id: 'beu-patna',
-    degree: 'Bachelor of Computer Science and Engineering (Artificial Intelligence)',
-    college: 'Bihar Engineering University Patna',
+    degree: 'B.Tech, CSE (Artificial Intelligence)',
+    college: 'Bihar Engineering University, Patna',
     university: 'Bihar Engineering University',
-    duration: 'Oct 2022 – Jun. 2026',
-    score: 'Cumulative GPA: 7.29 / 10.0',
+    duration: 'Oct 2022 – Jun 2026',
+    score: 'CGPA: 7.3 / 10',
     coursework: [
-      'Data Structures & Algorithms',
-      'Object-Oriented Programming (OOPs)',
+      'OOP',
       'Operating Systems',
-      'Database Management Systems (DBMS)',
+      'DBMS',
+      'Data Structures & Algorithms',
       'Machine Learning',
       'Web Technology'
     ]

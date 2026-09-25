@@ -7,16 +7,16 @@ export const LoadingScreen: React.FC = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((oldProgress) => {
-        if (oldProgress >= 100) {
+      setProgress((prev) => {
+        if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(() => setIsVisible(false), 500); // Wait a bit after 100%
+          setTimeout(() => setIsVisible(false), 400);
           return 100;
         }
-        const diff = Math.random() * 25;
-        return Math.min(oldProgress + diff, 100);
+        const step = Math.random() * 20 + 8;
+        return Math.min(prev + step, 100);
       });
-    }, 150);
+    }, 70);
 
     return () => clearInterval(timer);
   }, []);
@@ -27,71 +27,72 @@ export const LoadingScreen: React.FC = () => {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ 
-            y: '-100vh',
-            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
+            opacity: 0,
+            y: -30,
+            filter: 'blur(10px)',
+            transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } 
           }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#070b14] text-white"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#07090e] text-white select-none"
         >
-          {/* Decorative backglows */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-glow-blue opacity-50 pointer-events-none rounded-full" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-glow-purple opacity-50 pointer-events-none rounded-full" />
+          {/* Subtle Volumetric Glow & Grain */}
+          <div 
+            className="absolute inset-0 pointer-events-none opacity-40"
+            style={{
+              background: 'radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.25) 0%, transparent 60%)'
+            }}
+          />
+          <div className="absolute inset-0 noise-overlay opacity-30 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col items-center max-w-sm px-6 text-center">
-            {/* Logo animation */}
+            
+            {/* Top Minimal Name */}
             <motion.div
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
-              className="relative flex items-center justify-center w-20 h-20 mb-8 rounded-2xl bg-gradient-to-tr from-blue-600 to-purple-600 shadow-lg shadow-blue-500/20"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="font-sans-clean font-extrabold uppercase text-xs tracking-widest text-slate-400 mb-6"
             >
-              <span className="font-display font-extrabold text-3xl tracking-wider select-none text-white">SK</span>
-              <motion.div 
-                className="absolute inset-0 rounded-2xl border border-white/30"
-                animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              />
+              SAURAV KUMAR
             </motion.div>
 
-            {/* Title */}
+            {/* Core Position Title */}
             <motion.h2 
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="font-display font-bold text-xl tracking-tight mb-2"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="font-sans-clean font-black uppercase text-xl sm:text-2xl tracking-tight text-white mb-2"
             >
-              Saurav Kumar
+              GENERATIVE AI ENGINEER
             </motion.h2>
+
             <motion.p
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 0.6 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-xs font-sans tracking-widest uppercase text-blue-400 mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="font-mono text-[10px] tracking-wider uppercase text-cyan-400 mb-8"
             >
-              Portfolio Loading
+              // BOOTING AGENT RUNTIME & TENSORS...
             </motion.p>
 
-            {/* Progress Bar Container */}
-            <div className="w-48 h-1 overflow-hidden bg-slate-800 rounded-full">
+            {/* Sleek Line Progress Bar */}
+            <div className="w-56 h-[1.5px] overflow-hidden bg-slate-800 rounded-full relative">
               <motion.div
-                className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
+                className="h-full bg-gradient-to-r from-cyan-400 via-blue-500 to-amber-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]"
                 style={{ width: `${progress}%` }}
                 layout
               />
             </div>
             
-            {/* Progress Percentage */}
-            <motion.span 
-              className="mt-2 text-xs font-mono text-slate-500"
-              key={Math.round(progress)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              {Math.round(progress)}%
-            </motion.span>
+            {/* Progress Percentage & Status */}
+            <div className="w-56 flex justify-between items-center mt-2.5 font-mono text-[9px] text-slate-500">
+              <span>INITIALIZING</span>
+              <span className="text-cyan-400">{Math.round(progress)}%</span>
+            </div>
           </div>
         </motion.div>
       )}
     </AnimatePresence>
   );
 };
+
 export default LoadingScreen;

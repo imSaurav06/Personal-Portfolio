@@ -98,4 +98,5 @@ export interface Achievement {
   title: string;
   description: string;
   iconName: string;
+  link?: string;
 }

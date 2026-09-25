@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark-bg: #070b14;
-  --color-dark-surface: rgba(13, 20, 35, 0.6);
-  --color-dark-border: rgba(59, 130, 246, 0.15);
-  --color-dark-border-hover: rgba(168, 85, 247, 0.35);
+  --color-dark-bg: #07090e;
+  --color-dark-surface: rgba(10, 14, 23, 0.7);
+  --color-dark-border: rgba(56, 189, 248, 0.15);
+  --color-dark-border-hover: rgba(168, 85, 247, 0.4);
 
-  --color-light-bg: #f3f4f6;
-  --color-light-surface: rgba(255, 255, 255, 0.7);
-  --color-light-border: rgba(59, 130, 246, 0.1);
-  --color-light-border-hover: rgba(168, 85, 247, 0.2);
+  --font-sans: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Playfair Display', 'Newsreader', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-slow: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-scanline: scanline 8s linear infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
 }
 
 @keyframes float {
@@ -119,3 +121,65 @@ body {
 .light .bg-glow-purple {
   background: radial-gradient(circle, rgba(168,85,247,0.06) 0%, rgba(0,0,0,0) 70%);
 }
+
+/* Reference Video Typography & Aesthetics */
+.font-editorial {
+  font-family: 'Playfair Display', 'Newsreader', Georgia, serif;
+  font-style: italic;
+}
+
+.font-sans-clean {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glass Refraction Magnifier Lens (Ref Frame 0001, 0015, 0251) */
+.lens-orb {
+  position: relative;
+  border-radius: 9999px;
+  background: radial-gradient(130% 130% at 30% 30%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 60%, rgba(37, 99, 235, 0.08) 100%);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.35),
+    inset 0 0 25px rgba(255, 255, 255, 0.25),
+    inset -4px -4px 15px rgba(34, 211, 238, 0.3),
+    inset 4px 4px 15px rgba(245, 158, 11, 0.25),
+    0 15px 40px -10px rgba(0, 0, 0, 0.8),
+    0 0 50px rgba(37, 99, 235, 0.25);
+  backdrop-filter: blur(8px) contrast(1.15) brightness(1.1);
+  -webkit-backdrop-filter: blur(8px) contrast(1.15) brightness(1.1);
+}
+
+.lens-orb::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 9999px;
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+/* Atmospheric Noise / Film Grain */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Colorful Project Transition Mesh Gradients (Ref Frame 0361, 0401, 0551) */
+.mesh-gradient-bg {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(217, 70, 239, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.5) 0%, transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 75% 65%, rgba(139, 92, 246, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 25% 75%, rgba(16, 185, 129, 0.3) 0%, transparent 45%),
+    #07090e;
+}
+
+/* Subtle glow text for headline */
+.hero-glow-blue {
+  text-shadow: 0 0 40px rgba(56, 189, 248, 0.35), 0 0 80px rgba(37, 99, 235, 0.2);
+}
+

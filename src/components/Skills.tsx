@@ -48,12 +48,14 @@ export const Skills: React.FC = () => {
 
   const getCategoryIcon = (id: string) => {
     switch (id) {
-      case 'languages': return Flame;
-      case 'frontend-mobile': return Monitor;
-      case 'backend-api': return Server;
-      case 'machine-learning': return Brain;
+      case 'ai-ml': return Brain;
+      case 'llm-agents': return Cpu;
+      case 'rag-vector': return Database;
+      case 'backend-apis': return Server;
+      case 'frontend': return Monitor;
       case 'databases': return Database;
-      case 'cloud-tools': return Cloud;
+      case 'devops-tools': return Cloud;
+      case 'core-concepts': return Award;
       default: return Cpu;
     }
   };

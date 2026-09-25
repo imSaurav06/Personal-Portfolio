@@ -32,7 +32,7 @@ export const App: React.FC = () => {
         {/* Navbar is persistent across routing views */}
         <Navbar />
         
-        <main className="flex-grow pt-16">
+        <main className="flex-grow">
           <React.Suspense fallback={
             <div className="w-full h-[60vh] flex items-center justify-center">
               <div className="w-8 h-8 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
